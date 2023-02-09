@@ -12,5 +12,5 @@ struct Movie: Identifiable {
     var title: String
     var description: String
     var rate: Float
-    var image: UIImage
+    var imagePath: String
 }

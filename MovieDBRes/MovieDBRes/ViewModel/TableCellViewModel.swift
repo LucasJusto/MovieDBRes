@@ -27,6 +27,6 @@ class TableCellViewModel: NSObject {
     }
     
     public func getImage() -> UIImage{
-        return movie.image
+        return UIImage(systemName: movie.imagePath)!
     }
 }

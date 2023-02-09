@@ -21,6 +21,7 @@
 		F5DD9BCE29952C56008E94AE /* TableCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD9BCD29952C56008E94AE /* TableCellViewModel.swift */; };
 		F5DD9BD029952C77008E94AE /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD9BCF29952C77008E94AE /* Movie.swift */; };
 		F5DD9BD229952F5F008E94AE /* TableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD9BD129952F5F008E94AE /* TableViewViewModel.swift */; };
+		F5DD9BD929955DE7008E94AE /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DD9BD829955DE7008E94AE /* MovieService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		F5DD9BCD29952C56008E94AE /* TableCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableCellViewModel.swift; sourceTree = "<group>"; };
 		F5DD9BCF29952C77008E94AE /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		F5DD9BD129952F5F008E94AE /* TableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewViewModel.swift; sourceTree = "<group>"; };
+		F5DD9BD829955DE7008E94AE /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 		F5DD9B912992B593008E94AE /* MovieDBRes */ = {
 			isa = PBXGroup;
 			children = (
+				F5DD9BD729955DD7008E94AE /* Service */,
 				F5DD9BC429942B37008E94AE /* View */,
 				F5DD9BC329942B2E008E94AE /* ViewModel */,
 				F5DD9BC229942B1B008E94AE /* Model */,
@@ -180,6 +183,14 @@
 				F5DD9BCB29952C01008E94AE /* TableViewCell.swift */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		F5DD9BD729955DD7008E94AE /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				F5DD9BD829955DE7008E94AE /* MovieService.swift */,
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +327,7 @@
 				F5DD9B972992B593008E94AE /* HomeViewController.swift in Sources */,
 				F5DD9B932992B593008E94AE /* AppDelegate.swift in Sources */,
 				F5DD9BCC29952C01008E94AE /* TableViewCell.swift in Sources */,
+				F5DD9BD929955DE7008E94AE /* MovieService.swift in Sources */,
 				F5DD9B952992B593008E94AE /* SceneDelegate.swift in Sources */,
 				F5DD9BCE29952C56008E94AE /* TableCellViewModel.swift in Sources */,
 				F5DD9BD029952C77008E94AE /* Movie.swift in Sources */,
