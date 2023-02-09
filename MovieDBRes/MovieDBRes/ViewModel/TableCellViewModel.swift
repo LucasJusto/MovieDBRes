@@ -23,7 +23,7 @@ class TableCellViewModel: NSObject {
     }
     
     public func getRate() -> String{
-        return "\(UIImage(systemName: "star")!) \(movie.rate)"
+        return "⭐️\(movie.rate)"
     }
     
     public func getImage() -> UIImage{
