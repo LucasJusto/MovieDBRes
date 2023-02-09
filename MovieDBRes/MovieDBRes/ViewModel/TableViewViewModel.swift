@@ -8,11 +8,25 @@
 import UIKit
 
 class TableViewViewModel: NSObject {
-    var movies: [Movie] = [
-        Movie(id: 0, title: "Spider-Man: Far From Home", description: "Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to.", rate: 7.8, imagePath: "film"),
-        Movie(id: 1, title: "Spider-Man: Far From Home", description: "Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to.", rate: 7.8, imagePath: "film"),
-        Movie(id: 2, title: "Aladdin", description: "A kindhearted street urchin named Aladdin embarks on a magical adventure after finding a lamp that releases a wisecra.", rate: 7.1, imagePath: "film")
-    ]
+    
+    var moviesService: MovieService
+    var movies: [Movie]
+    
+    
+    override init() {
+        self.moviesService = MovieService()
+        self.movies = []
+    }
+    
+    public func loadMovies() {
+        let semaphore = DispatchSemaphore(value: 0)
+        moviesService.getMovies(category: .now_playing) { movies in
+            print(movies)
+            self.movies = movies
+            semaphore.signal()
+        }
+        semaphore.wait()
+    }
     
     public func getMoviesSize() -> Int {
         return movies.count

@@ -22,10 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let vc: HomeViewController = HomeViewController()
         window.rootViewController = vc
         window.makeKeyAndVisible()
-        let svc = MovieService()
-        svc.getMovies(category: .popular) { movies in
-            print(movies)
-        }
         self.window = window
     }
 

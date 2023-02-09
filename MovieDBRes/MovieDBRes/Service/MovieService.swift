@@ -32,9 +32,8 @@ class MovieService {
                 
                 for movie in movies {
                     let title = movie["title"] as? String
-                    let rate = movie["vote_average"] as? Float
+                    let rate = movie["vote_average"] as? Double
                     let overview = movie["overview"] as? String
-                    let genreIds = movie["genre_ids"] as? [Int]
                     let posterPath = movie["poster_path"] as? String
                     movieList.append(Movie(id: 0, title: title ?? "No Title", description: overview ?? "No Description", rate: rate ?? 0.0, imagePath: posterPath ?? ""))
                 }
