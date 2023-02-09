@@ -14,6 +14,7 @@ class TableViewCell: UITableViewCell {
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.contentView.addSubview(view)
     }
     
     required init?(coder: NSCoder) {
@@ -27,7 +28,7 @@ class TableViewCell: UITableViewCell {
         self.contentView.addSubview(view)
     }
     
-    private func configView() {
+    public func configView() {
         self.view.titleLabel.text = viewModel?.getTitle()
         self.view.descriptionLabel.text = viewModel?.getDescription()
         self.view.rateLabel.text = viewModel?.getRate()

@@ -20,6 +20,8 @@ class HomeViewController: UIViewController {
     
     override func loadView() {
         self.screen = HomeScreenView()
+        self.screen?.tableView.delegate = self
+        self.screen?.tableView.dataSource = self
         self.view = screen
     }
 }
@@ -39,6 +41,7 @@ extension HomeViewController: UITableViewDataSource {
         let movieForRow: Movie = viewModel.getMovieForRow(row: indexPath.row)
         let cell: TableViewCell = TableViewCell(style: .default, reuseIdentifier: "TableViewCell")
         cell.viewModel = TableCellViewModel(movie: movieForRow)
+        cell.configView()
         return cell
     }
     

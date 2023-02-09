@@ -10,7 +10,8 @@ import UIKit
 class TableViewViewModel: NSObject {
     var movies: [Movie] = [
         Movie(id: 0, title: "Spider-Man: Far From Home", description: "Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to.", rate: 7.8, image: UIImage(systemName: "film")!),
-        Movie(id: 1, title: "Aladdin", description: "A kindhearted street urchin named Aladdin embarks on a magical adventure after finding a lamp that releases a wisecra.", rate: 7.1, image: UIImage(systemName: "film")!)
+        Movie(id: 1, title: "Spider-Man: Far From Home", description: "Peter Parker and his friends go on a summer trip to Europe. However, they will hardly be able to rest - Peter will have to.", rate: 7.8, image: UIImage(systemName: "film")!),
+        Movie(id: 2, title: "Aladdin", description: "A kindhearted street urchin named Aladdin embarks on a magical adventure after finding a lamp that releases a wisecra.", rate: 7.1, image: UIImage(systemName: "film")!)
     ]
     
     public func getMoviesSize() -> Int {
