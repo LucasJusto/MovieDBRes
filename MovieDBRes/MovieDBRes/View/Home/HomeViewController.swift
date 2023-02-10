@@ -8,14 +8,15 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
     var screen: HomeScreenView?
     
     var viewModel: TableViewViewModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        navigationItem.title = "Films"
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     override func loadView() {
@@ -30,7 +31,14 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //Details
+        
+        let movie = (viewModel?.movies[indexPath.row])!
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let detailsVC = DetailsViewController(movie: movie)
+        navigationController?.pushViewController(detailsVC, animated: true)
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

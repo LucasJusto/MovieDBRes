@@ -22,6 +22,7 @@ class TableCellView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 18)
+        label.text = "Title test"
         
         return label
     }()
