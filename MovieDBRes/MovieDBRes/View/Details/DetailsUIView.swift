@@ -8,14 +8,14 @@
 import UIKit
 
 class DetailsUIView: UIView {
-
+    
     var detailsContentView: DetailsContentUIView = DetailsContentUIView()
     var viewModel: DetailsViewModel?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.detailsContentView.translatesAutoresizingMaskIntoConstraints = false
         self.addSubview(self.detailsContentView)
-        
         self.configConstraints()
     }
     
@@ -28,13 +28,15 @@ class DetailsUIView: UIView {
         ])
     }
     
+    public func configView() {
+        self.detailsContentView.titleLabel.text = viewModel?.getTitle()
+        self.detailsContentView.descriptionLabel.text = viewModel?.getDescription()
+        self.detailsContentView.rateLabel.text = viewModel?.getRate()
+        self.detailsContentView.movieImage.image = viewModel?.getImage()
+    }
+    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-//    public func configView() {
-//        self.titleLabel.text = "Details"
-//    }
-
 }
