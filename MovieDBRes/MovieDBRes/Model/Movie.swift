@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Movie: Identifiable {
+struct Movie: Identifiable, Codable {
     var id: Int
     var title: String
     var description: String

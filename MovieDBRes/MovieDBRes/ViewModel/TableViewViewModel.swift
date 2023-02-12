@@ -20,8 +20,7 @@ class TableViewViewModel: NSObject {
     
     public func loadMovies() {
         let semaphore = DispatchSemaphore(value: 0)
-        moviesService.getMovies(category: .now_playing) { movies in
-            print(movies)
+        moviesService.getMovies { movies in
             self.movies = movies
             semaphore.signal()
         }
