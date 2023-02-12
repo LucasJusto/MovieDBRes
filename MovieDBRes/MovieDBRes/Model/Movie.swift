@@ -7,10 +7,10 @@
 
 import UIKit
 
-struct Movie: Identifiable {
+struct Movie: Identifiable, Codable {
     var id: Int
     var title: String
     var description: String
-    var rate: Float
-    var image: UIImage
+    var rate: Double
+    var imagePath: String
 }
