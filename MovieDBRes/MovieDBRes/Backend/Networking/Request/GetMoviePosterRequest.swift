@@ -1,26 +1,31 @@
 //
-//  GetMoviesRequest.swift
+//  GetMoviePosterRequest.swift
 //  MovieDBRes
 //
-//  Created by Lucas Justo on 10/02/23.
+//  Created by Lucas Justo on 12/02/23.
 //
 
 import Foundation
+import UIKit
 
-class GetMoviesRequest: APIRequest{
-    typealias ResponseType = [Movie]
+class GetMoviePosterRequest: APIRequest{
     
+    typealias ResponseType = UIImage
     
     func webServiceURL() -> String {
-        return "https://api.themoviedb.org/"
+        return "https://image.tmdb.org/"
     }
     
     func apiVersion() -> String {
-        return "3/"
+        return "t/"
+    }
+    
+    func apiResource() -> String {
+        return "p/"
     }
     
     func endPoint(urlParams: String?) -> String {
-        return "movie/now_playing?api_key=dd5a68ffc24d87f1b7ff8161056a315f&page=1"
+        return "w500\(urlParams ?? "")"
     }
     
     func requestType() -> HTTPMethod {

@@ -8,7 +8,7 @@
 import UIKit
 
 class DetailsViewModel {
-    
+    let movieService: MovieService = MovieService()
     var movie: Movie
     
     init(movie: Movie) {
@@ -28,7 +28,14 @@ class DetailsViewModel {
     }
     
     public func getImage() -> UIImage{
-        return UIImage(systemName: "film")!
+        var imageRet = UIImage(systemName: "film")!
+        let semaphore = DispatchSemaphore(value: 0)
+        movieService.getPosterByPath(posterPath: movie.imagePath) { image in
+            imageRet = image
+            semaphore.signal()
+        }
+        semaphore.wait()
+        return imageRet
     }
     
 }

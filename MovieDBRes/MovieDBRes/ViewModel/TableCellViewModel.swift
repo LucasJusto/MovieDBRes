@@ -8,6 +8,7 @@
 import UIKit
 
 class TableCellViewModel: NSObject {
+    var movieService: MovieService = MovieService()
     var movie: Movie
     
     init(movie: Movie) {
@@ -27,6 +28,13 @@ class TableCellViewModel: NSObject {
     }
     
     public func getImage() -> UIImage{
-        return UIImage(systemName: "film")!
+        var imageRet = UIImage(systemName: "film")!
+        let semaphore = DispatchSemaphore(value: 0)
+        movieService.getPosterByPath(posterPath: movie.imagePath) { image in
+            imageRet = image
+            semaphore.signal()
+        }
+        semaphore.wait()
+        return imageRet
     }
 }

@@ -9,6 +9,8 @@ import Foundation
 
 class GetMoviesResponse: APIResponse {
     
+    typealias ResponseType = [Movie]
+    
     var rawData: Data?
     
     var success: Bool?
@@ -48,5 +50,4 @@ class GetMoviesResponse: APIResponse {
         return movieList
     }
     
-    typealias ResponseType = [Movie]
 }

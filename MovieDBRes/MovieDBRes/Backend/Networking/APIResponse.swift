@@ -8,7 +8,7 @@
 import Foundation
 
 protocol APIResponse<ResponseType> {
-    associatedtype ResponseType: Codable
+    associatedtype ResponseType
     
     var rawData: Foundation.Data? { get set }
     var success: Bool? { get set }

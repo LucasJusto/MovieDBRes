@@ -8,21 +8,21 @@
 import Foundation
 
 class NetworkApiClient {
-    func performRequest<ResponseType>(request: any APIRequest<ResponseType>, response: any APIResponse<ResponseType>, completionHandler: @escaping (ResponseType) -> Void) {
-        let urlRequest = urlRequestWith(apiRequest: request)
+    func performRequest<ResponseType>(request: any APIRequest<ResponseType>, response: any APIResponse<ResponseType>, urlParams: String?, completionHandler: @escaping (ResponseType) -> Void) {
+        let urlRequest = urlRequestWith(apiRequest: request, urlParams: urlParams)
         URLSession.shared.dataTask(with: urlRequest) { data, res, error in
             guard let data = data
             else {
                 return
             }
             response.setRawData(rawData: data)
-            completionHandler(response.getData() as! ResponseType)
+            completionHandler(response.getData())
         }.resume()
     }
     
-    func urlRequestWith<ResponseType>(apiRequest: any APIRequest<ResponseType>) -> URLRequest {
+    func urlRequestWith<ResponseType>(apiRequest: any APIRequest<ResponseType>, urlParams: String?) -> URLRequest {
         let  completeUrl = apiRequest.webServiceURL() + apiRequest.apiPath() +
-        apiRequest.apiVersion() + apiRequest.apiResource() + apiRequest.endPoint()
+        apiRequest.apiVersion() + apiRequest.apiResource() + apiRequest.endPoint(urlParams: urlParams)
         
         var urlRequest = URLRequest(url: URL(string: completeUrl)!)
         urlRequest.httpMethod = apiRequest.requestType().rawValue

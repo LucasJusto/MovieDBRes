@@ -21,7 +21,7 @@ public enum HTTPMethod: String {
 
 
 protocol APIRequest<ResponseType> {
-    associatedtype ResponseType: Codable
+    associatedtype ResponseType
     
     func webServiceURL() -> String
     
@@ -34,7 +34,7 @@ protocol APIRequest<ResponseType> {
     //optional
     func apiResource() -> String
     
-    func endPoint() -> String
+    func endPoint(urlParams: String?) -> String
     
     //optional
     func bodyParams() -> NSDictionary?
