@@ -5,3 +5,4 @@
 <p>Service Layer can be found at the folder "Backend" and it was highly inspired by: https://betterprogramming.pub/highly-customizable-network-layer-in-swift-5-1e5c1e163674</p>
 <br/>
 <p> To study ViewCode and MVVM we used this series of videos from BackFront Academy (PT-BR): https://www.youtube.com/watch?v=wRv8nmRe0mQ&list=PLQ1R_-BgWHXSKtmKj5FG56QXvTCMiiPp5 </p>
+<p> And to learn about the coordinator pattern, we used the material from Hacking with Swift: https://www.hackingwithswift.com/articles/71/how-to-use-the-coordinator-pattern-in-ios-apps </p>
