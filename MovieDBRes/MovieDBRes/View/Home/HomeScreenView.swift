@@ -11,7 +11,6 @@ class HomeScreenView: UIView {
     lazy var tableView: UITableView = {
         let tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
-//        tableView.backgroundColor = .systemPink
         tableView.register(TableViewCell.self, forCellReuseIdentifier: "TableViewCell")
         
         return tableView

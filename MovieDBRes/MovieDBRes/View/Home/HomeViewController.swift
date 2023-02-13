@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    weak var coordinator: HomeCoordinator? 
+    
     var screen: HomeScreenView?
     
     var viewModel: TableViewViewModel?
@@ -16,7 +18,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Films"
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationController?.navigationBar.prefersLargeTitles = false
     }
     
     override func loadView() {
@@ -36,9 +38,8 @@ extension HomeViewController: UITableViewDelegate {
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let detailsVC = DetailsViewController(movie: movie)
-        navigationController?.pushViewController(detailsVC, animated: true)
-        
+        coordinator?.showDetails(movie: movie)
+            
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

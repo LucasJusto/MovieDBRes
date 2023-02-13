@@ -9,6 +9,7 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    weak var coordinator: HomeCoordinator?
     private let movie: Movie
     var screen: DetailsUIView?
     var viewModel: DetailsViewModel?
